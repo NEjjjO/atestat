@@ -1,0 +1,42 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+ofstream fout("minim.txt");
+
+
+
+int main()
+{
+    int n;
+    int a[51][51];
+    int min;
+    cin >> n;
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            cin >> a[i][j];
+        }
+    }
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            cout << a[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    for (int j = 0; j < n; j++) {
+        min = a[0][j];
+        for (int i = 0; i < n; i++) {
+            
+            if (a[i][j] < min) {
+                min = a[i][j];
+            }
+
+        }
+        fout << min << " ";
+    }
+    
+}
+

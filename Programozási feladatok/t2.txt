@@ -1,0 +1,41 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+ifstream fin("numere.txt");
+
+int main()
+{
+    int szam,i=0,j,k=0,m;
+    int t[100];
+    bool ok=false;
+    bool okk;
+    while(fin>>szam)
+    {
+        if(szam>0){
+            ok=true;
+            t[i]=szam;
+            i++;
+        }
+    }
+    do{
+        okk=false;
+        for(int j=0;j<i-k-1;j++)
+            if(t[j]>t[j+1]){
+                m=t[j];
+                t[j]=t[j+1];
+                t[j+1]=m;
+                okk=true;
+                }
+            k++;
+    }while(okk==true);
+
+    if(ok==false)
+        cout<<"NU EXISTA";
+    else
+        for(j=0;j<i;j++)
+            cout<<t[j]<<" ";
+    return 0;
+}
+
+
